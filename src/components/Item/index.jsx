@@ -18,9 +18,13 @@ const Item = ({ type, content, updateItem, handleKeyPress }) => {
           value={content}
           onChange={(e) => updateItem(e.target.value)}
         />
-      ): <p>Some new item</p>}
+      ): componentMappings[type](content)}
     </ItemWrapper>
   )
 }
+
+const componentMappings = {
+  img: (content) => <Image {...content} />
+};
 
 export default Item;
