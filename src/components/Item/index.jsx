@@ -1,5 +1,6 @@
 import React from 'react';
 import { ItemWrapper } from './style.js';
+import Image from '../Image';
 
 const Item = ({ type, content, updateItem, handleKeyPress }) => {
   const textBox = React.useRef();
