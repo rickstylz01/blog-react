@@ -23,7 +23,8 @@ const Item = ({ type, content, updateItem, handleKeyPress }) => {
   )
 }
 
-const componentMappings = {
+//a mapping table to render custom components
+export const componentMappings = {
   img: (content) => <Image {...content} />
 };
 
