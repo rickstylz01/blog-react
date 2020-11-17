@@ -1,7 +1,7 @@
 import React from 'react';
 import { ItemWrapper } from './style.js';
 
-const Item = ({ type, content, updateItem }) => {
+const Item = ({ type, content, updateItem, handleKeyPress }) => {
   const textBox = React.useRef();
 
   //told browser to immediately focus on the textarea
@@ -13,6 +13,7 @@ const Item = ({ type, content, updateItem }) => {
     <ItemWrapper>
       {!type ? (
         <textarea
+          onKeyPress={handleKeyPress}
           ref={textBox}
           value={content}
           onChange={(e) => updateItem(e.target.value)}
