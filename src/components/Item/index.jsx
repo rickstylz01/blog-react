@@ -7,7 +7,9 @@ const Item = ({ type, content, updateItem, handleKeyPress }) => {
 
   //told browser to immediately focus on the textarea
   React.useEffect(() => {
-    textBox.current.focus();
+    if (!type) {
+      textBox.current.focus();
+    }
   });
 
   return (
