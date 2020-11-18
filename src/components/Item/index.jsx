@@ -2,6 +2,11 @@ import React from 'react';
 import { ItemWrapper } from './style.js';
 import Image from '../Image';
 
+//a mapping table to render custom components
+export const componentMappings = {
+  img: (content) => <Image {...content} />
+};
+
 const Item = ({ type, content, updateItem, handleKeyPress }) => {
   const textBox = React.useRef();
 
@@ -25,10 +30,5 @@ const Item = ({ type, content, updateItem, handleKeyPress }) => {
     </ItemWrapper>
   )
 }
-
-//a mapping table to render custom components
-export const componentMappings = {
-  img: (content) => <Image {...content} />
-};
 
 export default Item;
