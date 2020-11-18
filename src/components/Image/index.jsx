@@ -1,4 +1,5 @@
 import React from 'react';
+import { ImageWrapper } from './style.js'
 
 const EditImage = ({ updateItem }) => { 
   const [src, setSrc] = React.useState('');
@@ -9,7 +10,7 @@ const EditImage = ({ updateItem }) => {
   }
 
   return (
-    <div>
+    <div className="create-img">
       <input placeholder="Add src" value={src} onChange={e => setSrc(e.target.value)} />
       <input placeholder="Add alt" value={alt} onChange={e => setAlt(e.target.value)} />
       <button onClick={updateImageProperties}>Submit</button>
@@ -18,9 +19,9 @@ const EditImage = ({ updateItem }) => {
 }
 
 const Image = ({ src, alt, updateItem }) => (
-  <div>
+  <ImageWrapper>
     { src && alt ? <img src={src} alt={alt} /> : <EditImage updateItem={updateItem} />}
-  </div>
+  </ImageWrapper>
 );
 
 export default Image;
