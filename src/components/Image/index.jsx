@@ -4,8 +4,8 @@ const EditImage = ({ updateItem }) => {
   const [src, setSrc] = React.useState('');
   const [alt, setAlt] = React.useState('');
 
-  const updateImageProperties = () => {
-
+  const updateImageProperties = (e) => {
+    updateItem({ src, alt });
   }
 
   return (
@@ -17,9 +17,9 @@ const EditImage = ({ updateItem }) => {
   )
 }
 
-const Image = ({ src, alt }) => (
+const Image = ({ src, alt, updateItem }) => (
   <div>
-    { src && alt ? <img src={src} alt={alt} /> : <EditImage />}
+    { src && alt ? <img src={src} alt={alt} /> : <EditImage updateItem={updateItem} />}
   </div>
 );
 

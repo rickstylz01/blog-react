@@ -4,7 +4,7 @@ import Image from '../Image';
 
 //a mapping table to render custom components
 export const componentMappings = {
-  img: (content) => <Image {...content} />
+  img: (content) => <Image {...content} updateItem={updateItem} />
 };
 
 const Item = ({ type, content, updateItem, handleKeyPress }) => {
@@ -21,12 +21,12 @@ const Item = ({ type, content, updateItem, handleKeyPress }) => {
     <ItemWrapper>
       {!type ? (
         <textarea
-          onKeyPress={handleKeyPress}
           ref={textBox}
           value={content}
           onChange={(e) => updateItem(e.target.value)}
+          onKeyPress={handleKeyPress}
         />
-      ): componentMappings[type](content)}
+      ): componentMappings[type](content), updateItem}
     </ItemWrapper>
   )
 }
