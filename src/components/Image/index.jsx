@@ -19,7 +19,7 @@ const EditImage = ({ updateItem }) => {
 
 const Image = ({ src, alt }) => (
   <div>
-    <img src={src} alt={alt} ? <img src={src} alt={alt} /> : <EditImage />
+    { src && alt ? <img src={src} alt={alt} /> : <EditImage />}
   </div>
 );
 
